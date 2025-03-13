@@ -4,9 +4,10 @@ param(
     $word
 )
 
-$article = switch ($word) {
-    ($_ -match "^[aeiou]") { 'an' }
-    Default { 'a' }
+$article = "a"
+
+if ($word -match "^[aeiou]") {
+    $article = "an"
 }
 
 "Ahoy, Captain, {0} {1} off the larboard bow!" -f $article, $word

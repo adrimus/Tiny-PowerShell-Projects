@@ -5,7 +5,7 @@ param(
 )
 
 $article = switch ($word) {
-    ($_ -match "^[aeiou]") { 'an' }
+    {$_ -match "^[aeiou]"} { 'an' }
     Default { 'a' }
 }
 
